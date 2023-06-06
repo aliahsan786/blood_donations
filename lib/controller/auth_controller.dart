@@ -168,10 +168,25 @@ class AuthController extends GetxController {
         await imageController.uploadPhoto();
         await Future.delayed(const Duration(seconds: 1));
 
+        // auth.verifyPhoneNumber(
+        //     phoneNumber: '+923036657152',
+        //     verificationCompleted: (value) {
+        //       print(value);
+        //     },
+        //     verificationFailed: (value) {
+        //       print(value);
+        //     },
+        //     codeSent: (message, code) {
+        //       print(code);
+        //     },
+        //     codeAutoRetrievalTimeout: (value) {
+        //       print(value);
+        //     });
         UserCredential userCredential =
             await auth.createUserWithEmailAndPassword(
                 email: emailController.text.trim(),
                 password: passwordController.text.trim());
+
         print('Ali');
         String userId = userCredential.user!.uid;
         userModel = UserModel(
