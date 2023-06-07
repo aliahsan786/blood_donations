@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:blood_donations/availableDoner/AvailableDoner.dart';
+import 'package:blood_donations/screens/plasma/all_plasma_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -43,6 +45,10 @@ class HomePage extends StatelessWidget {
             } else {
               Get.to(() => MyRequest());
             }
+          }),
+          BoxPart(context, "Available Doner", "assets/032-blood bag.svg", true,
+              () {
+            Get.to(() => AvailableDoner());
           }),
         ],
       ),
